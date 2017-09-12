@@ -10,6 +10,9 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class MessageResponder extends ListenerAdapter {
+	
+	static String SteamID = null;
+
 	/*
 	 *  Method where the program starts.
 	 */
@@ -43,15 +46,24 @@ public class MessageResponder extends ListenerAdapter {
 			channel.sendMessage("Your roll: " + roll).queue(sentMessage -> 
 			{
 				if (roll < 3) {			
-					channel.sendMessage( author + "'s roll wasn't very good... must be bad luck!\n").queue();
+					channel.sendMessage( "Your roll wasn't very good... must be bad luck!\n").queue();
 				} 
 			
 			});
 		} else if (msg.equals("!hello")) {
-			channel.sendMessage("Hello " + author + "!");
+			channel.sendMessage("Howdy!").queue();
 						
+		} else if (msg.endsWith("rlinfo")) {
+			int msgEnd = msg.indexOf("rlinfo");
+			if (msgEnd != -1) {
+				SteamID = msg.substring(1,msgEnd);
+			channel.sendMessage(SteamID).queue();
+			}
+
+			
 		}
 	
 	}
+	
 }
 
