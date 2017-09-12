@@ -6,7 +6,7 @@ Links to both API's can be found below:
 
 <a href = "https://github.com/DV8FromTheWorld/JDA">JDA</a> created by <a href = "https://github.com/567legodude">567legodude</a>
 
-<a href = "https://developers.rocketleaguestats.com/>RLS for Developers</a>
+<a href = "https://developers.rocketleaguestats.com">RLS for Developers</a>
 
 ## Download
 
